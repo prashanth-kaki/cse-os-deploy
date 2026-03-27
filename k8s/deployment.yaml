@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-deployment
+  name: springboot-openshift
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: csekub-app
+      app: springboot-openshift
   template:
     metadata:
       labels:
-        app: csekub-app
+        app: springboot-openshift
     spec:
       containers:
-      - name: springboot-container
-        image: ydprjy/csekub:latest
+      - name: springboot-openshift-container
+        image: iamshyam1911/springboot-cse-openshift:latest
         ports:
         - containerPort: 8085
